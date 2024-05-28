@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Hacking Morpion</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <link rel="stylesheet" type="text/css" href="./style.css" />
+    </head>
+    <body>
+        <h1 class="title">The MTF Morpion</h1>
+        <select id="difficulty-selector">
+            <option class="option" value="Débutant">Débutant</option>
+            <option class="option" value="Intermédiaire">Intermédiaire</option>
+            <option class="option" value="Avancé">Avancé</option>
+        </select>
+        <section class="game-grid">
+            <div class="cell" id="A1"></div>
+            <div class="cell" id="A2"></div>
+            <div class="cell" id="A3"></div>
+
+            <div class="cell" id="B1"></div>
+            <div class="cell" id="B2"></div>
+            <div class="cell" id="B3"></div>
+
+            <div class="cell" id="C1"></div>
+            <div class="cell" id="C2"></div>
+            <div class="cell" id="C3"></div>
+        </section>
+        <div class="actions">
+            <section>
+                <a class="replay-button" href="#" onclick="game.resetGame()">rejouer</a>
+            </section>
+            <section>
+                <a class="undo-button" href="#" onclick="game.undo()"><i class="fas fa-undo"></i></a>
+                <a class="redo-button" href="#" onclick="game.redo()"><i class="fas fa-redo"></i></a>
+                <a class="save-button" href="#" onclick="game.saveGame()"><i class="fas fa-save"></i></a>
+            </section>
+        </div>
+        <div class="end-message" id="end-message">
+        </div>
+        <script src="./morpion.js"></script>
+        <script>
+            const game = new Morpion();
+            game.loadGame();
+        </script>
+    </body>
+</html>
